@@ -43,6 +43,7 @@ SRCS := core/day01.c
 SRCS += utils/get_next_line.c
 SRCS += utils/strjoin.c
 SRCS += utils/substr.c
+SRCS += utils/is_digit.c
 
 
 
