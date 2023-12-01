@@ -104,7 +104,7 @@ clean:
 # Deleting the library after cleaning up all .o files (Can't be changed).
 
 fclean: clean
-	@echo "$(GREEN)***   Deleting library $(NAME)   ...   ***\n$(RESET)"
+	@echo "$(GREEN)***   Deleting executable $(NAME)   ...   ***\n$(RESET)"
 	@$(RM) $(NAME)
 
 # Re-compile everything (Can't be changed).
