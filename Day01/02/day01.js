@@ -17,30 +17,6 @@ const numberMapping = {
   nine: 9,
 }
 
-const lastIndefOfDigit = (line) => {
-  const size = line.length
-
-  for (let i = size - 1; i >= 0; i--) {
-    if (line[i] >= '0' && line[i] <= '9') {
-      return i
-    }
-  }
-
-  return -1
-}
-
-const firstIndexOfDigit = (line) => {
-  const size = line.length
-
-  for (let i = 0; i < size; i++) {
-    if (line[i] >= '0' && line[i] <= '9') {
-      return i
-    }
-  }
-
-  return -1
-}
-
 let wholeResult = 0;
 
 input.forEach((line) => {
@@ -49,8 +25,8 @@ input.forEach((line) => {
   }
 
   const numbersInLetters = Array.from(line.matchAll(numberInLettersRegex), match => match.at(1));
-  const indexOfFirstDigit = firstIndexOfDigit(line)
-  const indexOfLastDigit = lastIndefOfDigit(line)
+  const indexOfFirstDigit = [...line].findIndex((char) => char >= '0' && char <= '9');
+  const indexOfLastDigit = [...line].findLastIndex((char) => char >= '0' && char <= '9');
 
   let firstNumber = indexOfFirstDigit < 0 ? -1 : Number(line.at(indexOfFirstDigit)) * 10;
   let lastNumber = indexOfLastDigit < 0 ? -1 : Number(line.at(indexOfLastDigit))
@@ -71,7 +47,6 @@ input.forEach((line) => {
     }
   }
 
-  console.log(firstNumber + lastNumber, line);
   wholeResult += (firstNumber + lastNumber)
 });
 
