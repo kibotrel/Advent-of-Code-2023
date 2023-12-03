@@ -72,8 +72,6 @@ input.forEach((line, lineNumber) => {
         .at(second.at(0))
         .at(second.at(1))}${findDigits(second, 1)}`;
 
-      console.log(firstNumber, secondNumber);
-
       response += Number(firstNumber) * Number(secondNumber);
     }
   }
