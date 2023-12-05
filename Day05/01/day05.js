@@ -28,7 +28,6 @@ const maps = new Map([
 ]);
 
 let stage = STAGES.SEEDS;
-let response = 0;
 
 input.forEach((line, lineNumber) => {
   if (line.length === 0) {
@@ -84,8 +83,25 @@ input.forEach((line, lineNumber) => {
   }
 });
 
-console.log(seeds);
-console.log(maps);
+const lowestSolution = seeds.map((seed) => {
+  let currentNumber = seed;
+
+  for (let stage = 1; stage <= 64; stage *= 2) {
+    const stageRange = maps.get(stage).find((range) => {
+      const [[sourceStart, sourceEnd]] = range;
+
+      return currentNumber >= sourceStart && currentNumber <= sourceEnd;
+    });
+
+    currentNumber = !stageRange
+      ? currentNumber
+      : stageRange[1][0] + (currentNumber - stageRange[0][0]);
+  }
+
+  return currentNumber;
+}).reduce((acc, curr) => Math.min(acc, curr));
+
+console.log(lowestSolution);
 
 const end = performance.now();
 
