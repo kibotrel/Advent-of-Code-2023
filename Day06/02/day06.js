@@ -4,9 +4,9 @@ const { performance } = require('perf_hooks');
 
 const start = performance.now();
 
-const [timeString, DistanceString] = fs.readFileSync('../input.txt', 'utf8').split('\n');
+const [timeString, distanceString] = fs.readFileSync('../input.txt', 'utf8').split('\n');
 const time = Number(timeString.match(/\d+/g).join(''));
-const distance = Number(DistanceString.match(/\d+/g).join(''));
+const distance = Number(distanceString.match(/\d+/g).join(''));
 
 let recordBreakingScenarios = 0;
 
