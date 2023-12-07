@@ -12,7 +12,7 @@ This repository contains my solutions for the [Advent of Code 2023](https://adve
 | 04  | :white_check_mark: | :white_check_mark: |
 | 05  | :white_check_mark: | :white_check_mark: |
 | 06  | :white_check_mark: | :white_check_mark: |
-| 07  |        :x:         |        :x:         |
+| 07  | :white_check_mark: |        :x:         |
 | 08  |        :x:         |        :x:         |
 | 09  |        :x:         |        :x:         |
 | 10  |        :x:         |        :x:         |
